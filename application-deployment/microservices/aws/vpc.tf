@@ -23,7 +23,7 @@ resource "aws_subnet" "public-subnet" {
   cidr_block = "${var.subnet_cidr}"
   availability_zone = "${var.subnet_az}"
   map_public_ip_on_launch = true
-  depends_on = ["aws_internet_gateway.sockshop"]
+  depends_on = [aws_internet_gateway.sockshop]
 
   tags = {
     Name = "${var.name_tag_prefix} Public Subnet"

@@ -341,7 +341,7 @@ resource "aws_instance" "client" {
   vpc_security_group_ids = ["${aws_security_group.primary.id}"]
   subnet_id              = "${var.subnet_id}"
   count                  = "${var.client_count}"
-  depends_on             = ["aws_instance.primary"]
+  depends_on             = [aws_instance.primary]
 
   #Instance tags
   tags = {
