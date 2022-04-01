@@ -405,17 +405,17 @@ data "aws_iam_policy_document" "auto_discover_cluster" {
 
 # Outputs
 output "primary_server_private_ips" {
-  value = ["${aws_instance.primary.*.private_ip}"]
+  value = aws_instance.primary[*].private_ip
 }
 
 output "primary_server_public_ips" {
-  value = ["${aws_instance.primary.*.public_ip}"]
+  value = aws_instance.primary[*].public_ip
 }
 
 output "client_private_ips" {
-  value = ["${aws_instance.client.*.private_ip}"]
+  value = aws_instance.client[*].private_ip
 }
 
 output "client_public_ips" {
-  value = ["${aws_instance.client.*.public_ip}"]
+  value = aws_instance.client[*].public_ip
 }
